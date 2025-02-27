@@ -24,30 +24,34 @@ function gerarPopulacao() {
         let besouro = document.createElement('div');
         besouro.classList.add('besouro');
         besouro.style.backgroundColor = cores[i];
-        container.appendChild(besouro);
-        populacao.push(cores[i]);
+        container.appendChild(besouro); //mostra os besouros na tela
+        populacao.push(cores[i]); //adiciona cor nos besouros ativos
     }
     desenharRoleta();
 }
 
+
+//roleta colorida
 function desenharRoleta() {
     const canvas = document.getElementById('roleta');
     const ctx = canvas.getContext('2d');
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height); //limpa
 
-    const setores = cores.length;
-    const angulo = (2 * Math.PI) / setores;
+    const setores = cores.length; //define quantos setores a roleta terá
+    const angulo = (2 * Math.PI) / setores; //duvisao da roleta
 
+    //desenho da boleta
     for (let i = 0; i < setores; i++) {
         ctx.beginPath();
-        ctx.moveTo(100, 100);
+        ctx.moveTo(100, 100); //posição do centro do circurlo
         ctx.arc(100, 100, 100, i * angulo, (i + 1) * angulo);
         ctx.closePath();
-        ctx.fillStyle = cores[i];
-        ctx.fill();
+        ctx.fillStyle = cores[i]; //escolhe a cor da roleta
+        ctx.fill();//preenche a cor
     }
 }
 
+/*========================================================================== */
 
 function girarRoleta() {
     const selectionDiv = document.getElementById('selection');
