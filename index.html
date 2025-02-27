@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção por Roleta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h2 class="titulo_populacao">População Inicial</h2>
+        <button onclick="gerarPopulacao()">Gerar População</button>
+        <div id="besouros"></div>
+            <h3>Seleção por Roleta</h3>
+            <canvas id="roleta" width="200" height="200"></canvas> <br>
+            <button class="btn_girar_roleta"  onclick="girarRoleta()">Girar Roleta</button>
+        <h2>Nova Geração de Seleção</h2>
+        <div id="selection"></div>  <h2>Cross-Over</h2>
+        <div id="crossover">
+            <button id="gerarNova" onclick="generateNewGeneration()">Gerar Nova Geração</button>
+            <h2>One-Point 1</h2>
+            <div class="parent">
+                <div id="p1_point1" class="color-box" ></div>
+                <span>+</span>
+                <div id="p2_point1" class="color-box" ></div>
+                <span>→</span>
+                <div id="F_point1" class="color-box" ></div>
+            </div>
+            <h2>One-Point 2</h2>
+            <div class="parent">
+                <div id="p2_point2" class="color-box" ></div>
+                <span>+.</span>
+                <div id="p1_point2" class="color-box" ></div>
+                <span>→</span>
+                <div id="F_point2" class="color-box"></div>
+            </div>
+            <h2>Uniform</h2>
+            <div class="parent">
+                <div id="p1_uniforme" class="color-box" ></div>
+                <span>+</span>
+                <div id="p2_uniforme" class="color-box" ></div>
+                <span>→</span>
+                <div id="F_uniforme" class="color-box" ></div>
+            </div>
+            <h2>Aritmetico</h2>
+            <div class="parent">
+                <div id="p1_aritmetico" class="color-box" ></div>
+                <span>+</span>
+                <div id="p2_aritmetico" class="color-box" ></div>
+                <span>→</span>
+                <div id="F_aritmetico" class="color-box" ></div>
+            </div>
+        
+            <h1>Nova geração de crossover</h1>
+            <section class="Nova_geração_crossover">
+                <div class="color-box" id="novaGeracao1"></div>
+                <div class="color-box" id="novaGeracao2"></div>
+                <div class="color-box" id="novaGeracao3"></div>
+                <div class="color-box" id="novaGeracao4"></div>
+            </section>
+            <!-- <p class="color-box" id="resultadoOriginal"></p> -->
+            <div class="container_mutacao">
+                <button onclick="mutacaoAleatoria()">Gerar Mutação Aleatória</button> <br>
+                <div class="subcontainer">
+                    <div class="teste">
+                        <p>Original</p>
+                        <div id="original1"  class="color-box" ></div>
+                    </div>
+                    <span>→</span>
+                    <div class="teste">
+                        <p>Mutação</p>
+                        <div id="resultadoAleatorio" class="color-box" ></div>
+                    </div>
+                </div>
+            </div>
+            <div class="container_mutacao">
+                <button onclick="mutacaoPequena()">Garar Mutação Pequena</button> <br>
+                <div class="subcontainer">
+                    <div>
+                        <p>Original</p>
+                        <div id="original2"  class="color-box" ></div>
+                    </div>
+                    <span>→</span>
+                    <div>
+                        <p>Mutação</p>
+                        <div id="resultadoPequena" class="color-box" ></div>
+                    </div>
+                </div>
+            </div>
+            <div class="container_mutacao">
+                <button onclick="mutacaoDirigida()">Gerar Mutação Dirigida</button> <br>
+                <div class="subcontainer">
+                    <div>
+                        <p>Original</p>
+                        <div id="original3"  class="color-box" ></div>
+                    </div>
+                    <span>→</span>
+                    <div>
+                        <p>Mutação</p>
+                        <div id="resultadoDirigida" class="color-box" ></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

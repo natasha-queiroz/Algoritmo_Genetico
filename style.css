@@ -1,0 +1,85 @@
+body { 
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #ccc;
+}
+main {
+    border-radius: 10px;
+    margin: auto;
+    background-color: white;
+    max-width: 600px;
+}
+.titulo_populacao {
+    /* color: aqua; */
+    padding: 20px;
+}
+
+#crossover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.parent {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.color-box { /* Estilo para as caixas de cor */
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    margin: 0 5px; /* Espaçamento entre as caixas */
+}
+#besouros {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+    border: 50%;
+    padding: 10px;
+    border: 1px solid #c7c7c7;
+    height: 40px;
+}
+.btn_girar_roleta {
+    margin-top: 20px;
+}
+button {
+    background-color: azure;
+    padding: 10px;
+    font-weight: bolder;
+    box-shadow: 0.5px 0.5px 1.5px black;
+    border-style: none;
+}
+.besouro {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Para torná-los redondos */
+}
+canvas {
+    margin-top: 20px;
+}
+#selection { /* Estilo para a nova geração */
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    color: rgb(255, 192, 203);
+}
+.Nova_geração_crossover {
+    display: flex;
+}
+.subcontainer {
+    display: flex;
+    align-items: center;
+    
+}
+.container_mutacao {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+p {
+    margin: 0px;
+}
