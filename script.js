@@ -14,12 +14,13 @@ const cores = [
 let populacao = [];
 let filhosCrossover = [];  // Array para armazenar as 4 cores geradas pelo crossover
 
+//funcao para aparecer os besouros
 function gerarPopulacao() {
     const container = document.getElementById('besouros');
     container.innerHTML = '';
     populacao = [];
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 10; i++) { //repetição de 10 vezes
         let besouro = document.createElement('div');
         besouro.classList.add('besouro');
         besouro.style.backgroundColor = cores[i];
