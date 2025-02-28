@@ -52,6 +52,7 @@ function desenharRoleta() {
 }
 
 /*========================================================================== */
+//seleciona 6 besouros e armazena no array população
 
 function girarRoleta() {
     const selectionDiv = document.getElementById('selection');
@@ -71,7 +72,10 @@ function girarRoleta() {
     }
 }
 
+
+
 // cria nova geração
+//gera 4 filhos com metodos diferentes de cross-over
 function generateNewGeneration() {
     if (populacao.length < 2) {
         alert("Selecione pelo menos 2 besouros antes de gerar a nova geração!");
@@ -82,18 +86,23 @@ function generateNewGeneration() {
     const pais = [selecionarPorRoleta(), selecionarPorRoleta()];
 
     // Gerando os 4 filhos com os diferentes tipos de crossover
-    const filhoCrossover1 = crossoverColor(pais[0], pais[1]);
-    const filhoCrossover2 = crossoverUniforme(pais[0], pais[1]);
-    const filhoCrossover3 = crossoverAritmetico(pais[0], pais[1]);
+    const filhoCrossover1 = crossoverColor(pais[0], pais[1]);//Faz a média das cores dos pais para criar um novo besouro.
+
+    const filhoCrossover2 = crossoverUniforme(pais[0], pais[1]);//Escolhe aleatoriamente cada componente de um dos pais.
+    const filhoCrossover3 = crossoverAritmetico(pais[0], pais[1]);//Faz um cálculo ponderado para combinar os valores RGB dos pais.
     const filhoCrossover4 = crossoverAritmetico(pais[0], pais[1]);
 
     // Armazenando as cores dos filhos gerados
     filhosCrossover = [filhoCrossover1, filhoCrossover2, filhoCrossover3, filhoCrossover4];
 
+
+
     // Aplicando mutação (10% de chance de mudar a cor)
-    if (Math.random() < 0.1) {
-        filhosCrossover.push(cores[Math.floor(Math.random() * cores.length)]);
+    if (Math.random() < 0.1) {//gera um numero aleatorio entre 0 e 1
+        filhosCrossover.push(cores[Math.floor(Math.random() * cores.length)]);//escolhe cor aleatorio
     }
+
+
 
     // Atualizando a exibição dos filhos gerados
     document.getElementById('p1_point1').style.backgroundColor = pais[0];
@@ -146,7 +155,7 @@ function arrayToRgb(arr) {
     return `rgb(${arr[0]}, ${arr[1]}, ${arr[2]})`;
 }
 
-// Faz a média entre duas cores RGB
+// Faz a média dos valores RGB dos pais para gerar a cor do filho
 function crossoverColor(color1, color2) {
     let rgb1 = rgbToArray(color1);
     let rgb2 = rgbToArray(color2);
@@ -159,7 +168,7 @@ function crossoverColor(color1, color2) {
 }
 
 
-// Realiza o Crossover uniforme para cores RGB
+// Escolhe aleatoriamente cada canal (R, G ou B) de um dos pais.
 function crossoverUniforme(color1, color2) {
     let rgb1 = rgbToArray(color1);
     let rgb2 = rgbToArray(color2);
@@ -169,7 +178,8 @@ function crossoverUniforme(color1, color2) {
     return arrayToRgb(filho);
 }
 
-// Realiza o Crossover Aritmético
+// Realiza o Crossover Aritmético/Mistura as cores com um fator permitindo um cruzamento balanceado.
+
 function crossoverAritmetico(color1, color2, alpha = 0.5) {
     let rgb1A = rgbToArray(color1);
     let rgb2A = rgbToArray(color2);
@@ -183,6 +193,7 @@ function crossoverAritmetico(color1, color2, alpha = 0.5) {
     return arrayToRgb(filhoAritmetico);
 }
 
+/*=======================================mutação============================================= */
 
 // Aplica mutação aleatória em um único canal de cor, usando as cores dos filhos
 function mutacaoAleatoria() {
