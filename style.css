@@ -46,6 +46,7 @@ main {
 .btn_girar_roleta {
     margin-top: 20px;
 }
+
 button {
     background-color: azure;
     padding: 10px;
@@ -58,6 +59,7 @@ button {
     height: 40px;
     border-radius: 50%; /* Para torná-los redondos */
 }
+
 canvas {
     margin-top: 20px;
 }
