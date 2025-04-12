@@ -21,3 +21,5 @@ Este projeto é uma simulação visual de um algoritmo genético utilizando téc
   - Pequena
   - Dirigida
 - Visualização gráfica de todo o processo, com componentes interativos.
+
+📸 Demonstração
