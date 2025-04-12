@@ -6,7 +6,7 @@ Este projeto é uma simulação visual de um algoritmo genético utilizando téc
 
 - **HTML5**
 - **CSS3**
-- **JavaScript (Vanilla)**
+- **JavaScript**
 
 ## 🎯 Funcionalidades
 
